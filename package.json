@@ -3,7 +3,10 @@
     "version": "1.0.0",
     "main": "index.js",
     "scripts": {
-        "dev": "node index.js"
+       "dev": "node --watch index.js",
+        "start": "node index.js",
+        "test": "mocha ./__test__/* --exit"
+
     },
     "keywords": [],
     "author": "",
@@ -12,5 +15,9 @@
     "dependencies": {
         "express": "^4.19.2",
         "morgan": "^1.10.0"
+    },
+    "devDependencies": {
+        "mocha": "^10.4.0",
+        "supertest": "^7.0.0"
     }
 }

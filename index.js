@@ -1,13 +1,15 @@
 const express = require('express');
 const morgan = require('morgan');
-const port = 5000;
+const port = process.env.PORT || 3000;
 const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(morgan('combined'));
 app.get('/', function (req, res) {
-    return res.json({ message: 'Hello, world!' });
+    return res.send("Hello World!");
 });
 app.listen(port, function () {
-    // console.log(`Server listening on http://localhost:${port}`);
+    console.log(`Server listening on http://localhost:${port}`);
 });
+
+module.exports = app
